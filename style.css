@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
+
+body {
+    background-image: url("images/myback.gif");
+    
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 18;
+    line-height: 1.5;
+
+    width: min(100% - 2rem, 60em);
+    margin-inline: auto;
+}
+
+.custom-bullet::marker {
+    color: red;
+}
+
+.tooltip-text {
+    display: none;
+}
+
+/* CSS to show the text when the parent element is hovered */
+.tooltip:hover .tooltip-text {
+    display: block;
+}
+
+img#photo {
+    width: 20%;
+    float: right;
+    margin-top: 1em;
+    margin-left: 1em;
+    border-radius: 10px;
+}
+
+/* quotes */
+#citation {
+    font-style: italic;
+}
+#author {
+    text-align: right;
+    margin-top: 0.5em;
+    color: gray;
+}
+
+.image-gallery {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start; /* Prevents stretching */
+}
+
+.image-gallery img {
+  height: auto; /* Maintains original aspect ratio */
+  max-width: 100%; /* Prevents overflow */
+  max-height: 300px; /* Optional: sets maximum height */
+  object-fit: contain;
+}
+
+@media (max-width: 600px) {
+  .image-gallery {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .image-gallery img {
+    width: 90vw; /* Full width on mobile */
+    max-width: 90vw;
+    max-height: none; /* Remove height restriction if desired */
+  }
+}
